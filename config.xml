@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<databaseUrl>jdbc:mysql://localhost:3306/workers</databaseUrl>
+	<databaseUser>root</databaseUser>
+	<databasePassword></databasePassword>
+</config>
