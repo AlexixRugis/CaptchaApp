@@ -1,15 +1,14 @@
 package com.artech.workerslogin;
 
-import com.artech.workerslogin.config.Settings;
 import com.artech.workerslogin.config.SettingsXMLLoader;
 import com.artech.workerslogin.core.IApplication;
 import com.artech.workerslogin.core.ISettings;
 import com.artech.workerslogin.core.query.DatabaseHandle;
 import com.artech.workerslogin.core.storage.IStorage;
 import com.artech.workerslogin.database.storage.DbStorage;
+import com.artech.workerslogin.ui.MainWindow;
+import com.artech.workerslogin.ui.login.LoginView;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -77,17 +76,9 @@ public class WorkersApplication extends Application implements IApplication {
     private void createUI(Stage stage) {
         primaryStage = stage;
 
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(WorkersApplication.class.getResource("hello-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-            stage.setTitle("Hello!");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        /*MainWindow window = new MainWindow(this.storage);
-        window.run(stage);*/
+        MainWindow window = new MainWindow(480, 340, "Login");
+        window.setView(new LoginView(this.storage));
+        window.run(stage);
     }
 
     /**

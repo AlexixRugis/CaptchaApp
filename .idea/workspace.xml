@@ -4,37 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abfa28f-12c2-4e00-ba69-5e64f9a3f8e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/WorkersApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/config/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/config/SettingsXMLLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/IApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/ISettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/IManagerUpdateListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/IObjectManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/IWorkerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/model/IModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/model/WorkerModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/query/DatabaseHandle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/storage/IStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/manager/DbObjectManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/manager/WorkerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/storage/DbStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/hello-view.fxml" afterDir="false" />
+    <list default="true" id="3abfa28f-12c2-4e00-ba69-5e64f9a3f8e7" name="Changes" comment="config">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/MainWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/controllers/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/login/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/login/LoginView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/views/ActionDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/views/FXMLView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/views/View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/captcha-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/login-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/window-layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/WorkersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/WorkersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -55,19 +44,20 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectId" id="2GSIy8AZfyUYdYSpMptAtsz77uh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/alexi/IdeaProjects/WorkersLogin/libs"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexi/IdeaProjects/WorkersLogin/libs&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alexi\IdeaProjects\WorkersLogin\libs" />
@@ -102,6 +92,21 @@
       <option name="presentableId" value="Default" />
       <updated>1666294597262</updated>
     </task>
+    <task id="LOCAL-00001" summary="database backend">
+      <created>1666298794298</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666298794298</updated>
+    </task>
+    <task id="LOCAL-00002" summary="config">
+      <created>1666298928123</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666298928123</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,5 +119,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="database backend" />
+    <MESSAGE value="config" />
+    <option name="LAST_COMMIT_MESSAGE" value="config" />
   </component>
 </project>
