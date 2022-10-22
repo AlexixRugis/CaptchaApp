@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 
+import java.util.Optional;
+
 /**
  * Диалог действие
  */
@@ -46,9 +48,8 @@ public abstract class ActionDialog {
             return false;
         });
 
-        if (dialog.showAndWait().isPresent())
-            return dialog.showAndWait().get();
+        Optional<Boolean> o = dialog.showAndWait();
+        return o.orElse(false);
 
-        return false;
     }
 }

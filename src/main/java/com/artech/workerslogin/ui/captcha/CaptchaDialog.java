@@ -19,11 +19,11 @@ public class CaptchaDialog extends ActionDialog {
 
     @Override
     protected Boolean performAction() {
-        return false;
+        return true;
     }
 
     @Override
     protected boolean validate() {
-        return true;
+        return this.view.validate();
     }
 }

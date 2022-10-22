@@ -1,10 +1,13 @@
 package com.artech.workerslogin.ui.login;
 
+import com.artech.workerslogin.core.model.WorkerModel;
 import com.artech.workerslogin.core.storage.IStorage;
 import com.artech.workerslogin.ui.captcha.CaptchaDialog;
 import com.artech.workerslogin.ui.controllers.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.util.Date;
 
 public class LoginController extends Controller {
 
@@ -32,6 +35,7 @@ public class LoginController extends Controller {
     }
 
     private void handleSubmit() {
+        System.out.println(this.storage.workerManager().getAll());
         String login = loginField.getText();
         String password = passwordField.getText();
 
@@ -43,9 +47,29 @@ public class LoginController extends Controller {
             statusLabel.setText("");
         }
 
-        new CaptchaDialog(this.storage).ask();
+        if (!new CaptchaDialog(this.storage).ask()) {
+            statusLabel.setText("Вы не прошли капчу");
+            return;
+        }
 
-        System.out.println(loginField.getText());
-        System.out.println(passwordField.getText());
+        WorkerModel model = this.storage.workerManager().getWorker(login, password);
+
+        if (model == null) {
+            statusLabel.setText("Неверный логин или пароль");
+            return;
+        }
+
+        this.storage.workerManager().tryUpdate(new WorkerModel(
+                model.id(),
+                model.dbId(),
+                model.speciality(),
+                model.name(),
+                model.login(),
+                model.password(),
+                new Date(),
+                model.authStatus()
+        ));
+
+        System.out.println(model);
     }
 }

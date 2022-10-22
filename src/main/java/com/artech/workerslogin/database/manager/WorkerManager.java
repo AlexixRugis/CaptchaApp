@@ -28,13 +28,13 @@ public class WorkerManager extends DbObjectManager<WorkerModel> implements IWork
     @Override
     public boolean tryUpdate(WorkerModel model) {
         try {
-            PreparedStatement statement = handle.buildStatement("UPDATE workers SET ID = ?, Speciality = ?, Name = ?, Login = ?, Password = ?, LastAuth = ?, AuthState = ? WHERE id = ?");
+            PreparedStatement statement = handle.buildStatement("UPDATE workers SET ID = ?, Speciality = ?, Name = ?, Login = ?, Password = ?, LastAuth = ?, AuthStatus = ? WHERE id = ?");
             statement.setString(1, model.dbId());
             statement.setString(2, model.speciality());
             statement.setString(3, model.name());
             statement.setString(4, model.login());
             statement.setString(5, model.password());
-            statement.setDate(6, (Date) model.lastAuth());
+            statement.setDate(6, new Date(model.lastAuth().getTime()));
             statement.setString(7, model.authStatus());
             statement.setInt(8, model.id());
             statement.executeUpdate();
@@ -65,10 +65,32 @@ public class WorkerManager extends DbObjectManager<WorkerModel> implements IWork
                     result.getString("Login"),
                     result.getString("Password"),
                     result.getDate("LastAuth"),
-                    result.getString("AuthState")
+                    result.getString("AuthStatus")
             );
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public WorkerModel getWorker(String login, String password) {
+        try {
+            PreparedStatement statement = handle.buildStatement("SELECT * FROM workers WHERE Login = ? AND Password = ? LIMIT 1");
+            statement.setString(1, login);
+            statement.setString(2, password);
+            ResultSet result = statement.executeQuery();
+            WorkerModel model = null;
+            if (result.next())
+                 model = build(result);
+
+            statement.close();
+
+            return model;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

@@ -7,6 +7,7 @@ module com.artech.workerslogin {
 
     opens com.artech.workerslogin to javafx.fxml;
     opens com.artech.workerslogin.ui.login to javafx.fxml;
+    opens com.artech.workerslogin.ui.captcha to javafx.fxml;
 
     exports com.artech.workerslogin to javafx.graphics;
 }

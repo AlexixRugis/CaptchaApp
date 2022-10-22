@@ -9,9 +9,15 @@ import java.net.URL;
 
 public class CaptchaView extends FXMLView {
     private final IStorage storage;
+    private final CaptchaController controller;
 
     public CaptchaView(IStorage storage) {
         this.storage = storage;
+        this.controller = new CaptchaController(this.storage);
+    }
+
+    public boolean validate() {
+        return this.controller.validate();
     }
 
     @Override
@@ -21,7 +27,7 @@ public class CaptchaView extends FXMLView {
 
     @Override
     protected Controller getController() {
-        return new CaptchaController(this.storage);
+        return this.controller;
     }
 
     @Override
