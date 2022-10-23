@@ -23,11 +23,13 @@ public class CaptchaGenerator {
     }
 
     public String generate(int length) {
+        // Получаем текст из рандомных символов
         String text = generateCaptchaText(length);
 
         int width = (int) this.canvas.getWidth();
         int height = (int) this.canvas.getHeight();
 
+        // Закрашиваем место белым
         gc.setFill(Color.WHITE);
         gc.fillRect(0, 0, width, height);
 
@@ -35,12 +37,14 @@ public class CaptchaGenerator {
 
         gc.setFont(new Font("Arial", height / 2));
 
+        // Рисуем символы со случайным смещением по высоте
         int symbolOffset = width / length;
         for (int i = 0; i < length; i++) {
             gc.setFill(new Color(random.nextDouble() * 0.5f, random.nextDouble() * 0.5f, random.nextDouble() * 0.5f, 0.5f + random.nextDouble() * 0.25f));
             gc.fillText(String.valueOf(text.charAt(i)), i * symbolOffset + (symbolOffset >> 1), height / 2 + random.nextInt(height / 2));
         }
 
+        // Рисуем шумовые линии
         gc.beginPath();
         for (int i = 0; i < 3; i++) {
             gc.setFill(new Color(random.nextDouble() * 0.5f, random.nextDouble() * 0.5f, random.nextDouble() * 0.5f, 0.5f + random.nextDouble() * 0.25f));
@@ -49,6 +53,8 @@ public class CaptchaGenerator {
         }
         gc.stroke();
 
+
+        // Рисуем шумовые круги
         for (int i = 0; i < 7; i++) {
             gc.setFill(new Color(random.nextDouble() * 0.5f, random.nextDouble() * 0.5f, random.nextDouble() * 0.5f, 0.5f + random.nextDouble() * 0.25f));
             gc.fillOval(random.nextInt(width), random.nextInt(height), width / 10, width / 10);

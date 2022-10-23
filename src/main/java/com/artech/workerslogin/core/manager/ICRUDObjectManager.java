@@ -8,7 +8,7 @@ import java.util.Collection;
  * Менеджер объектов описывает методы работы с коллекциями моделей
  * @param <T> Класс модели
  */
-public interface IObjectManager<T extends IModel> {
+public interface ICRUDObjectManager<T extends IModel> {
 
     /**
      * Добавляет слушатель события обновления объектов

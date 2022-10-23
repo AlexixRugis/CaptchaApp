@@ -19,7 +19,8 @@ public abstract class FXMLView extends View {
         loader.setController(getController());
 
         try {
-            return new Scene(loader.load(), 256, 256).getRoot();
+            Scene scene = new Scene(loader.load());
+            return scene.getRoot();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

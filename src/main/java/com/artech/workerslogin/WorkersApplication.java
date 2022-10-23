@@ -5,9 +5,12 @@ import com.artech.workerslogin.core.IApplication;
 import com.artech.workerslogin.core.ISettings;
 import com.artech.workerslogin.core.query.DatabaseHandle;
 import com.artech.workerslogin.core.storage.IStorage;
-import com.artech.workerslogin.database.storage.DbStorage;
+import com.artech.workerslogin.database.storage.ApplicationStorage;
 import com.artech.workerslogin.ui.MainWindow;
 import com.artech.workerslogin.ui.login.LoginView;
+import com.artech.workerslogin.ui.navigation.IUINavigator;
+import com.artech.workerslogin.ui.navigation.UINavigator;
+import com.artech.workerslogin.ui.profile.ProfileView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -21,6 +24,7 @@ public class WorkersApplication extends Application implements IApplication {
     private IStorage storage;
     private ISettings settings;
     private Stage primaryStage;
+    private IUINavigator navigator;
 
     /**
      * Конструктор приложения
@@ -55,6 +59,11 @@ public class WorkersApplication extends Application implements IApplication {
         return this.primaryStage;
     }
 
+    @Override
+    public IUINavigator getNavigator() {
+        return this.navigator;
+    }
+
     public static WorkersApplication getInstance() {
         return instance;
     }
@@ -76,9 +85,12 @@ public class WorkersApplication extends Application implements IApplication {
     private void createUI(Stage stage) {
         primaryStage = stage;
 
-        MainWindow window = new MainWindow(480, 340, "Login");
-        window.setView(new LoginView(this.storage));
-        window.run(stage);
+        MainWindow window = new MainWindow(stage, 480, 340, "Login");
+        this.navigator = new UINavigator(window);
+        this.navigator.register("login", () -> new LoginView(this.storage));
+        this.navigator.register("profile", () -> new ProfileView(this.storage));
+        this.navigator.navigate("login");
+        window.run();
     }
 
     /**
@@ -95,7 +107,7 @@ public class WorkersApplication extends Application implements IApplication {
     private void createStorage() {
         DatabaseHandle handle = connectDatabase();
         try {
-            this.storage = new DbStorage(handle);
+            this.storage = new ApplicationStorage(handle);
         }
         catch (SQLException exception) {
             exception.printStackTrace();

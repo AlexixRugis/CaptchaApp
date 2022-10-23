@@ -2,7 +2,7 @@ package com.artech.workerslogin.core.manager;
 
 /**
  * Слушатель события обновления коллекции моделей
- * @see IObjectManager
+ * @see ICRUDObjectManager
  */
 public interface IManagerUpdateListener {
     /**

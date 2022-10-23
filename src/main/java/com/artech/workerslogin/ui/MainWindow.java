@@ -16,6 +16,7 @@ import java.io.IOException;
  */
 public class MainWindow {
 
+    private final Stage stage;
     private final int width;
     private final int height;
     private final String title;
@@ -23,7 +24,9 @@ public class MainWindow {
     private Scene scene;
     private AnchorPane rootPane;
 
-    public MainWindow(int width, int height, String title) {
+
+    public MainWindow(Stage stage, int width, int height, String title) {
+        this.stage = stage;
 
         this.width = width;
         this.height = height;
@@ -34,13 +37,11 @@ public class MainWindow {
 
     /**
      * Запускает приложение
-     *
-     * @param stage Главный контейнер приложения
      */
-    public void run(Stage stage) {
-        stage.setTitle(this.title);
-        stage.setScene(this.scene);
-        stage.show();
+    public void run() {
+        this.stage.setTitle(this.title);
+        this.stage.setScene(this.scene);
+        this.stage.show();
     }
 
     public void setView(View view) {
@@ -54,6 +55,9 @@ public class MainWindow {
         AnchorPane.setRightAnchor(content, 0.0);
 
         this.rootPane.getChildren().add(content);
+        this.stage.setTitle(view.getName());
+        this.stage.setMinWidth(content.getLayoutBounds().getWidth());
+        this.stage.setMinHeight(content.getLayoutBounds().getHeight());
     }
 
     private void initialize() {

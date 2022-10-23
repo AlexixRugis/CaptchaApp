@@ -1,6 +1,7 @@
 package com.artech.workerslogin.core;
 
 import com.artech.workerslogin.core.storage.IStorage;
+import com.artech.workerslogin.ui.navigation.IUINavigator;
 import javafx.stage.Stage;
 
 /**
@@ -25,4 +26,6 @@ public interface IApplication {
      * @see Stage
      */
     Stage getPrimaryStage();
+
+    IUINavigator getNavigator();
 }

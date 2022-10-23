@@ -28,7 +28,7 @@ public class WorkerManager extends DbObjectManager<WorkerModel> implements IWork
     @Override
     public boolean tryUpdate(WorkerModel model) {
         try {
-            PreparedStatement statement = handle.buildStatement("UPDATE workers SET ID = ?, Speciality = ?, Name = ?, Login = ?, Password = ?, LastAuth = ?, AuthStatus = ? WHERE id = ?");
+            PreparedStatement statement = handle.buildStatement("UPDATE workers SET ID = ?, Speciality = ?, Name = ?, Login = ?, Password = ?, LastAuth = ?, AuthStatus = ? WHERE PK = ?");
             statement.setString(1, model.dbId());
             statement.setString(2, model.speciality());
             statement.setString(3, model.name());
@@ -58,7 +58,7 @@ public class WorkerManager extends DbObjectManager<WorkerModel> implements IWork
     protected WorkerModel build(ResultSet result) {
         try {
             return new WorkerModel(
-                    result.getInt("pk"),
+                    result.getInt("PK"),
                     result.getString("ID"),
                     result.getString("Speciality"),
                     result.getString("Name"),

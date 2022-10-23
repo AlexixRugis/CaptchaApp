@@ -1,7 +1,7 @@
 package com.artech.workerslogin.database.manager;
 
 import com.artech.workerslogin.core.manager.IManagerUpdateListener;
-import com.artech.workerslogin.core.manager.IObjectManager;
+import com.artech.workerslogin.core.manager.ICRUDObjectManager;
 import com.artech.workerslogin.core.model.IModel;
 import com.artech.workerslogin.core.query.DatabaseHandle;
 
@@ -16,7 +16,7 @@ import java.util.List;
  * Менеджер коллеций моделей на основе БД
  * @param <T> Класс модели
  */
-public abstract class DbObjectManager<T extends IModel> implements IObjectManager<T> {
+public abstract class DbObjectManager<T extends IModel> implements ICRUDObjectManager<T> {
 
     /**
      * Слушатели события обновления коллекции

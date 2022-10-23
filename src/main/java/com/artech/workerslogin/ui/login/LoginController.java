@@ -1,5 +1,6 @@
 package com.artech.workerslogin.ui.login;
 
+import com.artech.workerslogin.WorkersApplication;
 import com.artech.workerslogin.core.model.WorkerModel;
 import com.artech.workerslogin.core.storage.IStorage;
 import com.artech.workerslogin.ui.captcha.CaptchaDialog;
@@ -7,6 +8,8 @@ import com.artech.workerslogin.ui.controllers.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class LoginController extends Controller {
@@ -47,7 +50,8 @@ public class LoginController extends Controller {
             statusLabel.setText("");
         }
 
-        if (!new CaptchaDialog(this.storage).ask()) {
+        // Если попыток больше 3х, то выводим капчу
+        if (this.storage.loginManager().getLoginAttemptsCount() > 3 && !new CaptchaDialog(this.storage).ask()) {
             statusLabel.setText("Вы не прошли капчу");
             return;
         }
@@ -56,10 +60,14 @@ public class LoginController extends Controller {
 
         if (model == null) {
             statusLabel.setText("Неверный логин или пароль");
+            this.storage.loginManager().setLoginAttemptsCount(this.storage.loginManager().getLoginAttemptsCount() + 1);
             return;
         }
+        else {
+            this.storage.loginManager().setLoginAttemptsCount(0);
+        }
 
-        this.storage.workerManager().tryUpdate(new WorkerModel(
+        model = new WorkerModel(
                 model.id(),
                 model.dbId(),
                 model.speciality(),
@@ -68,7 +76,12 @@ public class LoginController extends Controller {
                 model.password(),
                 new Date(),
                 model.authStatus()
-        ));
+        );
+
+        this.storage.workerManager().tryUpdate(model);
+        this.storage.loginManager().setCurrentAccount(model);
+
+        WorkersApplication.getInstance().getNavigator().navigate("profile");
 
         System.out.println(model);
     }

@@ -29,6 +29,11 @@ public class CaptchaController extends Controller {
         super(storage);
     }
 
+    /**
+     * Проверка капчи
+     *
+     * @return true - капча пройдена, false - пользователь нажал "Отмена"
+     */
     public boolean validate() {
         if (!Objects.equals(this.captchaText, this.textInputField.getText())) {
             regenerateCaptcha();

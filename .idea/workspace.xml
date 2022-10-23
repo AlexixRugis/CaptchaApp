@@ -4,18 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3abfa28f-12c2-4e00-ba69-5e64f9a3f8e7" name="Changes" comment="captcha begin">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaGenerator.java" afterDir="false" />
+    <list default="true" id="3abfa28f-12c2-4e00-ba69-5e64f9a3f8e7" name="Changes" comment="login">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/ILoginManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/manager/LoginManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/navigation/IUINavigationEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/navigation/IUINavigator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/navigation/UINavigator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/profile/ProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/profile/ProfileView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/profile-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/WorkersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/WorkersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/IApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/IApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/IManagerUpdateListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/IManagerUpdateListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/IObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/ICRUDObjectManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/IWorkerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/manager/IWorkerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/storage/IStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/core/storage/IStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/manager/DbObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/manager/DbObjectManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/manager/WorkerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/manager/WorkerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/storage/DbStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/database/storage/ApplicationStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/captcha/CaptchaGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/login/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/views/ActionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/views/ActionDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/views/FXMLView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/artech/workerslogin/ui/views/FXMLView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/captcha-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/captcha-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/artech/workerslogin/login-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666383002187</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="login">
+      <created>1666435417258</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666435417258</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +145,7 @@
     <MESSAGE value="database backend" />
     <MESSAGE value="config" />
     <MESSAGE value="captcha begin" />
-    <option name="LAST_COMMIT_MESSAGE" value="captcha begin" />
+    <MESSAGE value="login" />
+    <option name="LAST_COMMIT_MESSAGE" value="login" />
   </component>
 </project>
